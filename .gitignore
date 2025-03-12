@@ -1,0 +1,38 @@
+# General
+*.log
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.DS_Store
+
+# Virtual Environment
+venv/
+.env
+
+# Django
+*.sqlite3
+/media/
+/static/
+/settings.py  # Ignore if sensitive settings are stored
+Django/app/migrations/__pycache__/
+Django/app/__pycache__/
+Django/app/migrations/*.pyc
+Django/app/migrations/*.cpython-*
+
+# Vue
+node_modules/
+dist/
+Vue/.gitignore
+Vue/package-lock.json
+
+# Misc
+.vscode/
+.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+
+
+

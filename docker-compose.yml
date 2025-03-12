@@ -1,0 +1,55 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: team_management
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: adminpassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  django:
+    build:
+      context: ./Django  
+    container_name: django
+    restart: always
+    depends_on:
+      - db
+    environment:
+      DJANGO_SETTINGS_MODULE: app.settings
+      DATABASE_HOST: db
+      DATABASE_NAME: team_management
+      DATABASE_USER: admin
+      DATABASE_PASSWORD: instateam
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Django:/app
+      - /app/manage.py
+
+  vue:
+    build:
+      context: ./Vue
+    environment:
+      VITE_BACKEND_URL: http://localhost:8000
+    command: npm run dev -- --host 0.0.0.0
+    container_name: vue_frontend
+    restart: always
+    depends_on:
+      - django
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./Vue/src:/app/src
+      - ./Vue/public:/app/public
+      - ./Vue/package.json:/app/package.json
+      - ./Vue/package-lock.json:/app/package-lock.json
+
+volumes:
+  node_modules:
+  mysql_data:
