@@ -60,5 +60,6 @@ To apply database migrations, including the `add_dummy_team_members` migration, 
 - **Django Admin Panel:** [http://localhost:8000/admin](http://localhost:8000/admin)
   - Credentials: `admin/adminpassword`
 - **Vue Frontend App:** [http://localhost:5173](http://localhost:5173)
+- **Running test.py inside the Docker container:** (docker exec -it <container_id> python manage.py test)
 
 ---
