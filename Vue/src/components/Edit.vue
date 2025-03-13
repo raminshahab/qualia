@@ -26,6 +26,7 @@
         </select>
       </div>
       <button type="submit" class="submit-btn">Save</button>
+      <button type="button" @click="deleteMember" class="delete-btn">Delete</button>
     </form>
 
     <!-- Error Dialog -->
@@ -87,6 +88,23 @@ export default {
         }
       }
     },
+    async deleteMember() {
+  if (!this.formData?.id) {
+    alert('Team member data is not loaded. Please try again.');
+    return;
+  }
+
+  if (confirm('Are you sure you want to delete this team member?')) {
+    try {
+      await axios.delete(`http://localhost:8000/api/team-members/${this.formData.id}/`);
+      alert('Team member deleted successfully!');
+      this.$router.push('/'); // Redirect to the team members list
+    } catch (error) {
+      console.error('Error deleting team member:', error);
+      alert('Failed to delete team member.');
+    }
+  }
+},
   },
 };
 </script>
@@ -128,10 +146,28 @@ button.submit-btn {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 button.submit-btn:hover {
   background-color: #45a049;
+}
+
+button.delete-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+button.delete-btn:hover {
+  background-color: #cc0000;
 }
 
 .error-message {

@@ -28,9 +28,6 @@ To apply database migrations, including the `add_dummy_team_members` migration, 
    docker exec -it <django_container_id> python manage.py migrate
    ```
 
-### 📌 Seed Dummy Team Members
-(Currently not specified in the instructions—add if needed.)
-
 ### 📌 Run Django Development Server
    ```sh
    docker exec -it <django_container_id> python manage.py runserver 0.0.0.0:8000
