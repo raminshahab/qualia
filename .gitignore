@@ -24,7 +24,6 @@ Django/app/migrations/*.cpython-*
 node_modules/
 dist/
 Vue/.gitignore
-Vue/package-lock.json
 
 # Misc
 .vscode/
