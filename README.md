@@ -11,7 +11,7 @@ BP is a web application that allows you to setup a boiler plate Django and VUE p
 1. **Clone the repository:**
    ```sh
    git clone <repo_url>
-   cd instateam
+   cd project_name
    ```
 2. **Run the application using Docker:**
    ```sh

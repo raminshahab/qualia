@@ -4,7 +4,7 @@ services:
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_DATABASE: team_management
+      MYSQL_DATABASE: fs_boilerplate
       MYSQL_USER: admin
       MYSQL_PASSWORD: adminpassword
       MYSQL_ROOT_PASSWORD: rootpassword
@@ -23,9 +23,9 @@ services:
     environment:
       DJANGO_SETTINGS_MODULE: app.settings
       DATABASE_HOST: db
-      DATABASE_NAME: team_management
+      DATABASE_NAME: fs_boilerplate
       DATABASE_USER: admin
-      DATABASE_PASSWORD: instateam
+      DATABASE_PASSWORD: fs_boilerplate
     ports:
       - "8000:8000"
     volumes:
