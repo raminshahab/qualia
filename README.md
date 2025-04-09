@@ -1,8 +1,8 @@
-# Instateam
+# Full Stack Demo Boilerplate
 
-### Team Management System using Django and Vue.js
+### Boiler plate using Django and Vue.js
 
-Instateam is a web application that allows you to manage team members, including creating, updating, deleting, and listing members. It uses **Django** for the backend API and **Vue.js** for the frontend.
+BP is a web application that allows you to setup a boiler plate Django and VUE project using a simple Docker command and your local computer. Note: You will need Docker Desktop and have the Docker daemon running in order to use.
 
 ---
 
@@ -43,12 +43,6 @@ To apply database migrations, including the `add_dummy_team_members` migration, 
 
 ## 📡 API Endpoints
 
-| Method | Endpoint | Description |
-|--------|---------------------------|-------------------------------|
-| `GET`  | `/api/team-members/`      | List all members              |
-| `POST` | `/api/team-members/`      | Create a new member           |
-| `PUT`  | `/api/team-members/<id>/` | Update an existing member     |
-| `DELETE` | `/api/team-members/<id>/` | Delete a member              |
 
 ---
 
